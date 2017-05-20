@@ -22,6 +22,7 @@ import ir.hosseinabbasi.getyourguide.R;
 import ir.hosseinabbasi.getyourguide.data.db.model.Data;
 import ir.hosseinabbasi.getyourguide.data.db.model.ReviewPOJO;
 import ir.hosseinabbasi.getyourguide.ui.base.BaseActivity;
+import ir.hosseinabbasi.getyourguide.utils.AppLogger;
 
 /**
  * Created by Dr.jacky on 2017/05/19.
@@ -61,7 +62,7 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 
     @Override
     public void refreshQuestionnaire(List<Data> questionList) {
-        Log.v("ByMerefreshQuestionnaire",questionList.toString());
+        //AppLogger.d("ByMerefreshQuestionnair",questionList.toString());
         /*for (Question question : questionList) {
             if (question != null) {
                 mCardsContainerView.addView(new QuestionCard(question));
@@ -74,7 +75,7 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 
     @Override
     public void reloadQuestionnaire(List<Data> questionList) {
-        Log.v("ByMereloadQuestionnaire",questionList.toString());
+        //AppLogger.d("ByMereloadQuestionnaire",questionList.toString());
         refreshQuestionnaire(questionList);
         ScaleAnimation animation =
                 new ScaleAnimation(

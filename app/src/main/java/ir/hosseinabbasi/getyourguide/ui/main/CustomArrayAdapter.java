@@ -15,6 +15,7 @@ import ir.hosseinabbasi.getyourguide.R;
 //import ir.hosseinabbasi.getyourguide.data.db.model.Review.data;
 import ir.hosseinabbasi.getyourguide.data.db.model.Data;
 import ir.hosseinabbasi.getyourguide.data.db.model.ReviewPOJO;
+import ir.hosseinabbasi.getyourguide.utils.AppLogger;
 
 /**
  * Created by Dr.jacky on 2017/05/19.
@@ -27,7 +28,7 @@ public class CustomArrayAdapter extends ArrayAdapter {
     public CustomArrayAdapter(Context context, List<Data> list) {
         super(context, 0, list);
         reviewsList = list;
-        Log.v("ByMeCustomArrayAdapter",list.toString());
+        //AppLogger.d("ByMeCustomArrayAdapter",list.toString());
     }
 
     @Override

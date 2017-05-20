@@ -5,7 +5,11 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.google.gson.internal.$Gson$Types;
+import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -23,6 +27,7 @@ import ir.hosseinabbasi.getyourguide.data.db.model.Data;
 import ir.hosseinabbasi.getyourguide.data.db.model.ReviewPOJO;
 import ir.hosseinabbasi.getyourguide.di.ApplicationContext;
 import ir.hosseinabbasi.getyourguide.utils.AppConstants;
+import ir.hosseinabbasi.getyourguide.utils.AppLogger;
 import ir.hosseinabbasi.getyourguide.utils.CommonUtils;
 
 /**
@@ -67,9 +72,10 @@ public class AppDataManager implements DataManager {
     @Override
     public Observable<Boolean> seedDatabaseQuestions() {
 
+
         //GsonBuilder builder = new GsonBuilder().excludeFieldsWithoutExposeAnnotation();
-        GsonBuilder builder = new GsonBuilder();
-        final Gson gson = builder.create();
+        //GsonBuilder builder = new GsonBuilder();
+        //final Gson gson = builder.create();
 
         return mDbHelper.isQuestionEmpty()
                 .concatMap(new Function<Boolean, ObservableSource<? extends Boolean>>() {
@@ -79,8 +85,8 @@ public class AppDataManager implements DataManager {
                         if (isEmpty) {
                             Type type = $Gson$Types
                                     .newParameterizedTypeWithOwner(null, List.class,
-                                            Data.class);
-                            Log.v("ByMeGsontype",type.toString());
+                                            ReviewPOJO.class);
+                            //AppLogger.d("ByMeGsontype",type.toString());
                             /*List<Review> questionList = gson.fromJson(
                                     CommonUtils.loadJSONFromAsset(mContext,
                                             AppConstants.SEED_DATABASE_QUESTIONS),
@@ -96,16 +102,41 @@ public class AppDataManager implements DataManager {
                                             AppConstants.SEED_DATABASE_QUESTIONS),
                                     type);*/
 
-                            List<Data> rv = gson.fromJson(
+                            /*List<Data> rv = gson.fromJson(
                                     CommonUtils.loadJSONFromAsset(mContext,
                                             AppConstants.SEED_DATABASE_QUESTIONS),
-                                    type);
-                            Log.v("ByMegson.fromJson",rv.toString());
+                                    type);*/
+
+                            JsonParser parser = new JsonParser();
+                            JsonObject rootObejct = parser.parse(CommonUtils.loadJSONFromAsset(mContext,
+                                    AppConstants.SEED_DATABASE_QUESTIONS)).getAsJsonObject();
+                            JsonElement dataElement = rootObejct.get("data");
+
+                            Gson gson = new Gson();
+                            List<Data> dataList = new ArrayList<>();
+                            //Check if "data" element is an array or an object and parse accordingly...
+                            if (dataElement.isJsonObject()) {
+                                //The returned list has only 1 element
+                                Data d = gson.fromJson(dataElement, Data.class);
+                                dataList.add(d);
+                            }
+                            else if (dataElement.isJsonArray()) {
+                                //The returned list has >1 elements
+                                Type dataListType = new TypeToken<List<Data>>() {}.getType();
+                                dataList = gson.fromJson(dataElement, dataListType);
+                            }
+
+
+                            /*ReviewPOJO allData = new Gson().fromJson(CommonUtils.loadJSONFromAsset(mContext,
+                                    AppConstants.SEED_DATABASE_QUESTIONS),type);
+                            List<Data> rvd = allData.getData();*/
+
+                            //AppLogger.d("ByMegson.fromJson",rv.toString());
                             /*for (ReviewPOJO.DataType data : rv.getData()) {
                                 questionList.add(data);
                             }*/
 
-                            return saveQuestionList(rv);
+                            return saveQuestionList(dataList);
                             //return saveQuestionList(questionList);
                             //return saveQuestionList(questionList);
                         }

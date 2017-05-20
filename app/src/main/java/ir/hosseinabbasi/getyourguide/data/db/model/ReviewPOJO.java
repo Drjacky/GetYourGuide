@@ -153,10 +153,11 @@ public class ReviewPOJO {
         this.status = status;
     }
 
-    /**
-     * To-many relationship, resolved on first access (and after reset).
-     * Changes to to-many relations are not persisted, make changes to the target entity.
-     */
+
+    public List<Data> getData() {
+        return this.data;
+
+    }
 
     public void setData(List<Data> data) {
         this.data = data;

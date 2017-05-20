@@ -7,6 +7,7 @@ import ir.hosseinabbasi.getyourguide.data.DataManager;
 import ir.hosseinabbasi.getyourguide.data.db.model.Data;
 import ir.hosseinabbasi.getyourguide.data.db.model.ReviewPOJO;
 import ir.hosseinabbasi.getyourguide.ui.base.BasePresenter;
+import ir.hosseinabbasi.getyourguide.utils.AppLogger;
 import ir.hosseinabbasi.getyourguide.utils.rx.SchedulerProvider;
 
 import java.util.List;
@@ -45,7 +46,7 @@ public class MainPresenter<V extends MainMvpView> extends BasePresenter<V>
                         if (!isViewAttached()) {
                             return;
                         }
-                        Log.v("ByMeonViewInitialized","questionList: "+questionList.toString());
+                        //AppLogger.d("ByMeonViewInitialized","questionList: "+questionList.toString());
                         if (questionList != null) {
                             getMvpView().refreshQuestionnaire(questionList);
                         }
