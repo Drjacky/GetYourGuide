@@ -7,10 +7,12 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import io.reactivex.Observable;
-import ir.hosseinabbasi.getyourguide.data.db.model.Review;
-import ir.hosseinabbasi.getyourguide.data.db.model.Review.dataz;
+//import ir.hosseinabbasi.getyourguide.data.db.model.Review;
+//import ir.hosseinabbasi.getyourguide.data.db.model.Review.dataz;
 import ir.hosseinabbasi.getyourguide.data.db.model.DaoMaster;
 import ir.hosseinabbasi.getyourguide.data.db.model.DaoSession;
+import ir.hosseinabbasi.getyourguide.data.db.model.Data;
+import ir.hosseinabbasi.getyourguide.data.db.model.ReviewPOJO;
 
 
 /**
@@ -28,11 +30,11 @@ public class AppDbHelper implements DbHelper {
     }
 
     @Override
-    public Observable<List<Review.dataz>> getAllQuestions() {
-        return Observable.fromCallable(new Callable<List<Review.dataz>>() {
+    public Observable<List<Data>> getAllQuestions() {
+        return Observable.fromCallable(new Callable<List<Data>>() {
             @Override
-            public List<Review.dataz> call() throws Exception {
-                return mDaoSession.getReviewDao().loadAll();
+            public List<Data> call() throws Exception {
+                return mDaoSession.getDataDao().loadAll();
             }
         });
     }
@@ -42,28 +44,28 @@ public class AppDbHelper implements DbHelper {
         return Observable.fromCallable(new Callable<Boolean>() {
             @Override
             public Boolean call() throws Exception {
-                return !(mDaoSession.getReviewDao().count() > 0);
+                return !(mDaoSession.getDataDao().count() > 0);
             }
         });
     }
 
     @Override
-    public Observable<Boolean> saveQuestion(final Review.dataz question) {
+    public Observable<Boolean> saveQuestion(final Data question) {
         return Observable.fromCallable(new Callable<Boolean>() {
             @Override
             public Boolean call() throws Exception {
-                mDaoSession.getReviewDao().insert(question);
+                mDaoSession.getDataDao().insert(question);
                 return true;
             }
         });
     }
 
     @Override
-    public Observable<Boolean> saveQuestionList(final List<Review.dataz> questionList) {
+    public Observable<Boolean> saveQuestionList(final List<Data> questionList) {
         return Observable.fromCallable(new Callable<Boolean>() {
             @Override
             public Boolean call() throws Exception {
-                mDaoSession.getReviewDao().insertInTx(questionList);
+                mDaoSession.getDataDao().insertInTx(questionList);
                 return true;
             }
         });

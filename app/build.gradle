@@ -26,6 +26,19 @@ android {
         }
     }
 
+    sourceSets {
+        main {
+            java {
+                exclude '**/ir/hosseinabbasi/getyourguide/data/db/model/Review.java'
+            }
+        }
+        androidTest {
+            java {
+                exclude '**/Review.java'
+            }
+        }
+    }
+
     compileOptions.incremental = false
 }
 

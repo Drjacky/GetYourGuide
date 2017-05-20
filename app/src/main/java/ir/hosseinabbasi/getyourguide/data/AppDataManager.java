@@ -1,6 +1,7 @@
 package ir.hosseinabbasi.getyourguide.data;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -17,7 +18,9 @@ import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.functions.Function;
 import ir.hosseinabbasi.getyourguide.data.db.DbHelper;
-import ir.hosseinabbasi.getyourguide.data.db.model.Review;
+//import ir.hosseinabbasi.getyourguide.data.db.model.Review;
+import ir.hosseinabbasi.getyourguide.data.db.model.Data;
+import ir.hosseinabbasi.getyourguide.data.db.model.ReviewPOJO;
 import ir.hosseinabbasi.getyourguide.di.ApplicationContext;
 import ir.hosseinabbasi.getyourguide.utils.AppConstants;
 import ir.hosseinabbasi.getyourguide.utils.CommonUtils;
@@ -47,24 +50,25 @@ public class AppDataManager implements DataManager {
     }
 
     @Override
-    public Observable<Boolean> saveQuestion(Review.data question) {
+    public Observable<Boolean> saveQuestion(Data question) {
         return mDbHelper.saveQuestion(question);
     }
 
     @Override
-    public Observable<Boolean> saveQuestionList(List<Review.data> questionList) {
+    public Observable<Boolean> saveQuestionList(List<Data> questionList) {
         return mDbHelper.saveQuestionList(questionList);
     }
 
     @Override
-    public Observable<List<Review.data>> getAllQuestions() {
+    public Observable<List<Data>> getAllQuestions() {
         return mDbHelper.getAllQuestions();
     }
 
     @Override
     public Observable<Boolean> seedDatabaseQuestions() {
 
-        GsonBuilder builder = new GsonBuilder().excludeFieldsWithoutExposeAnnotation();
+        //GsonBuilder builder = new GsonBuilder().excludeFieldsWithoutExposeAnnotation();
+        GsonBuilder builder = new GsonBuilder();
         final Gson gson = builder.create();
 
         return mDbHelper.isQuestionEmpty()
@@ -75,21 +79,34 @@ public class AppDataManager implements DataManager {
                         if (isEmpty) {
                             Type type = $Gson$Types
                                     .newParameterizedTypeWithOwner(null, List.class,
-                                            Review.class);
+                                            Data.class);
+                            Log.v("ByMeGsontype",type.toString());
                             /*List<Review> questionList = gson.fromJson(
                                     CommonUtils.loadJSONFromAsset(mContext,
                                             AppConstants.SEED_DATABASE_QUESTIONS),
                                     type);*/
-                            List<Review.data> questionList = new ArrayList<Review.data>();
-                            Review rv = gson.fromJson(
+                            //List<ReviewPOJO> questionList = new ArrayList<ReviewPOJO>();
+                            /*ReviewPOJO rv = gson.fromJson(
+                                    CommonUtils.loadJSONFromAsset(mContext,
+                                            AppConstants.SEED_DATABASE_QUESTIONS),
+                                    type);*/
+
+                            /*List<ReviewPOJO.Data> rv = gson.fromJson(
+                                    CommonUtils.loadJSONFromAsset(mContext,
+                                            AppConstants.SEED_DATABASE_QUESTIONS),
+                                    type);*/
+
+                            List<Data> rv = gson.fromJson(
                                     CommonUtils.loadJSONFromAsset(mContext,
                                             AppConstants.SEED_DATABASE_QUESTIONS),
                                     type);
-                            for (Review.data data : rv.getDatas()) {
+                            Log.v("ByMegson.fromJson",rv.toString());
+                            /*for (ReviewPOJO.DataType data : rv.getData()) {
                                 questionList.add(data);
-                            }
+                            }*/
 
-                            return saveQuestionList(questionList);
+                            return saveQuestionList(rv);
+                            //return saveQuestionList(questionList);
                             //return saveQuestionList(questionList);
                         }
                         return Observable.just(false);

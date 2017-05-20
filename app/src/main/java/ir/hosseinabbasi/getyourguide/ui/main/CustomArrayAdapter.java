@@ -1,6 +1,7 @@
 package ir.hosseinabbasi.getyourguide.ui.main;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +11,10 @@ import android.widget.TextView;
 import java.util.List;
 
 import ir.hosseinabbasi.getyourguide.R;
-import ir.hosseinabbasi.getyourguide.data.db.model.Review;
-import ir.hosseinabbasi.getyourguide.data.db.model.Review.data;
+//import ir.hosseinabbasi.getyourguide.data.db.model.Review;
+//import ir.hosseinabbasi.getyourguide.data.db.model.Review.data;
+import ir.hosseinabbasi.getyourguide.data.db.model.Data;
+import ir.hosseinabbasi.getyourguide.data.db.model.ReviewPOJO;
 
 /**
  * Created by Dr.jacky on 2017/05/19.
@@ -19,11 +22,12 @@ import ir.hosseinabbasi.getyourguide.data.db.model.Review.data;
 
 public class CustomArrayAdapter extends ArrayAdapter {
 
-    List<Review.dataz> reviewsList;
+    List<Data> reviewsList;
 
-    public CustomArrayAdapter(Context context, List<Review.dataz> list) {
+    public CustomArrayAdapter(Context context, List<Data> list) {
         super(context, 0, list);
         reviewsList = list;
+        Log.v("ByMeCustomArrayAdapter",list.toString());
     }
 
     @Override
@@ -49,7 +53,7 @@ public class CustomArrayAdapter extends ArrayAdapter {
             result=convertView;
         }
 
-        Review.dataz rv = (Review.dataz) reviewsList.get(position);
+        Data rv = (Data) reviewsList.get(position);
         holder.rating.setText(rv.getRating());
         holder.title.setText(rv.getTitle());
         holder.message.setText(rv.getMessage());

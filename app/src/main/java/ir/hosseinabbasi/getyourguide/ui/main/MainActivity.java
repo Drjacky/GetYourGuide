@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
 import android.widget.ListView;
@@ -17,7 +18,9 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ir.hosseinabbasi.getyourguide.R;
-import ir.hosseinabbasi.getyourguide.data.db.model.Review;
+//import ir.hosseinabbasi.getyourguide.data.db.model.Review;
+import ir.hosseinabbasi.getyourguide.data.db.model.Data;
+import ir.hosseinabbasi.getyourguide.data.db.model.ReviewPOJO;
 import ir.hosseinabbasi.getyourguide.ui.base.BaseActivity;
 
 /**
@@ -57,7 +60,8 @@ public class MainActivity extends BaseActivity implements MainMvpView {
     }
 
     @Override
-    public void refreshQuestionnaire(List<Review.dataz> questionList) {
+    public void refreshQuestionnaire(List<Data> questionList) {
+        Log.v("ByMerefreshQuestionnaire",questionList.toString());
         /*for (Question question : questionList) {
             if (question != null) {
                 mCardsContainerView.addView(new QuestionCard(question));
@@ -69,7 +73,8 @@ public class MainActivity extends BaseActivity implements MainMvpView {
     }
 
     @Override
-    public void reloadQuestionnaire(List<Review.dataz> questionList) {
+    public void reloadQuestionnaire(List<Data> questionList) {
+        Log.v("ByMereloadQuestionnaire",questionList.toString());
         refreshQuestionnaire(questionList);
         ScaleAnimation animation =
                 new ScaleAnimation(

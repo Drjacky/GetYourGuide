@@ -1,7 +1,11 @@
 package ir.hosseinabbasi.getyourguide.ui.main;
 
+import android.util.Log;
+
 import ir.hosseinabbasi.getyourguide.data.DataManager;
-import ir.hosseinabbasi.getyourguide.data.db.model.Review;
+//import ir.hosseinabbasi.getyourguide.data.db.model.Review;
+import ir.hosseinabbasi.getyourguide.data.db.model.Data;
+import ir.hosseinabbasi.getyourguide.data.db.model.ReviewPOJO;
 import ir.hosseinabbasi.getyourguide.ui.base.BasePresenter;
 import ir.hosseinabbasi.getyourguide.utils.rx.SchedulerProvider;
 
@@ -35,13 +39,13 @@ public class MainPresenter<V extends MainMvpView> extends BasePresenter<V>
                 .getAllQuestions()
                 .subscribeOn(getSchedulerProvider().io())
                 .observeOn(getSchedulerProvider().ui())
-                .subscribe(new Consumer<List<Review.data>>() {
+                .subscribe(new Consumer<List<Data>>() {
                     @Override
-                    public void accept(List<Review.data> questionList) throws Exception {
+                    public void accept(List<Data> questionList) throws Exception {
                         if (!isViewAttached()) {
                             return;
                         }
-
+                        Log.v("ByMeonViewInitialized","questionList: "+questionList.toString());
                         if (questionList != null) {
                             getMvpView().refreshQuestionnaire(questionList);
                         }
@@ -55,9 +59,9 @@ public class MainPresenter<V extends MainMvpView> extends BasePresenter<V>
                 .getAllQuestions()
                 .subscribeOn(getSchedulerProvider().io())
                 .observeOn(getSchedulerProvider().ui())
-                .subscribe(new Consumer<List<Review.data>>() {
+                .subscribe(new Consumer<List<Data>>() {
                     @Override
-                    public void accept(List<Review.data> questionList) throws Exception {
+                    public void accept(List<Data> questionList) throws Exception {
                         if (!isViewAttached()) {
                             return;
                         }

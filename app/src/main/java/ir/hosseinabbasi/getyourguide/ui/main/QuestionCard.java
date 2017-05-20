@@ -3,7 +3,9 @@ package ir.hosseinabbasi.getyourguide.ui.main;
 import android.widget.TextView;
 
 import ir.hosseinabbasi.getyourguide.R;
-import ir.hosseinabbasi.getyourguide.data.db.model.Review;
+import ir.hosseinabbasi.getyourguide.data.db.model.Data;
+import ir.hosseinabbasi.getyourguide.data.db.model.ReviewPOJO;
+//import ir.hosseinabbasi.getyourguide.data.db.model.Review;
 
 import com.mindorks.placeholderview.annotations.Layout;
 import com.mindorks.placeholderview.annotations.NonReusable;
@@ -22,9 +24,9 @@ public class QuestionCard {
     @View(R.id.tv_question_txt)
     private TextView mQuestionTextView;
 
-    private Review mQuestion;
+    private Data mQuestion;
 
-    public QuestionCard(Review question) {
+    public QuestionCard(Data question) {
         mQuestion = question;
     }
 
