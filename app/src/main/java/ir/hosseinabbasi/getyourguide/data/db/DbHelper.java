@@ -3,7 +3,6 @@ package ir.hosseinabbasi.getyourguide.data.db;
 import java.util.List;
 
 import io.reactivex.Observable;
-//import ir.hosseinabbasi.getyourguide.data.db.model.Review;
 import ir.hosseinabbasi.getyourguide.data.db.model.Data;
 import ir.hosseinabbasi.getyourguide.data.db.model.ReviewPOJO;
 

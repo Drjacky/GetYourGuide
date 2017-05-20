@@ -61,7 +61,6 @@ public class SplashPresenter<V extends SplashMvpView> extends BasePresenter<V>
     }
 
     private void decideNextActivity() {
-        //AppLogger.d("ByMedecideNextActivity","yup!");
         getMvpView().openMainActivity();
     }
 }

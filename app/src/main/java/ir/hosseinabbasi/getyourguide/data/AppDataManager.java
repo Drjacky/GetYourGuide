@@ -22,7 +22,6 @@ import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.functions.Function;
 import ir.hosseinabbasi.getyourguide.data.db.DbHelper;
-//import ir.hosseinabbasi.getyourguide.data.db.model.Review;
 import ir.hosseinabbasi.getyourguide.data.db.model.Data;
 import ir.hosseinabbasi.getyourguide.data.db.model.ReviewPOJO;
 import ir.hosseinabbasi.getyourguide.di.ApplicationContext;
@@ -86,7 +85,6 @@ public class AppDataManager implements DataManager {
                             Type type = $Gson$Types
                                     .newParameterizedTypeWithOwner(null, List.class,
                                             ReviewPOJO.class);
-                            //AppLogger.d("ByMeGsontype",type.toString());
                             /*List<Review> questionList = gson.fromJson(
                                     CommonUtils.loadJSONFromAsset(mContext,
                                             AppConstants.SEED_DATABASE_QUESTIONS),
@@ -108,9 +106,9 @@ public class AppDataManager implements DataManager {
                                     type);*/
 
                             JsonParser parser = new JsonParser();
-                            JsonObject rootObejct = parser.parse(CommonUtils.loadJSONFromAsset(mContext,
+                            JsonObject rootObject = parser.parse(CommonUtils.loadJSONFromAsset(mContext,
                                     AppConstants.SEED_DATABASE_QUESTIONS)).getAsJsonObject();
-                            JsonElement dataElement = rootObejct.get("data");
+                            JsonElement dataElement = rootObject.get("data");
 
                             Gson gson = new Gson();
                             List<Data> dataList = new ArrayList<>();
@@ -131,7 +129,6 @@ public class AppDataManager implements DataManager {
                                     AppConstants.SEED_DATABASE_QUESTIONS),type);
                             List<Data> rvd = allData.getData();*/
 
-                            //AppLogger.d("ByMegson.fromJson",rv.toString());
                             /*for (ReviewPOJO.DataType data : rv.getData()) {
                                 questionList.add(data);
                             }*/

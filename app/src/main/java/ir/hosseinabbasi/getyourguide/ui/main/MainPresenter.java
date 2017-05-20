@@ -3,7 +3,6 @@ package ir.hosseinabbasi.getyourguide.ui.main;
 import android.util.Log;
 
 import ir.hosseinabbasi.getyourguide.data.DataManager;
-//import ir.hosseinabbasi.getyourguide.data.db.model.Review;
 import ir.hosseinabbasi.getyourguide.data.db.model.Data;
 import ir.hosseinabbasi.getyourguide.data.db.model.ReviewPOJO;
 import ir.hosseinabbasi.getyourguide.ui.base.BasePresenter;
@@ -46,7 +45,6 @@ public class MainPresenter<V extends MainMvpView> extends BasePresenter<V>
                         if (!isViewAttached()) {
                             return;
                         }
-                        //AppLogger.d("ByMeonViewInitialized","questionList: "+questionList.toString());
                         if (questionList != null) {
                             getMvpView().refreshQuestionnaire(questionList);
                         }

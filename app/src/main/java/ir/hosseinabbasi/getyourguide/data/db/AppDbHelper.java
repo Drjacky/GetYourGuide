@@ -7,8 +7,6 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import io.reactivex.Observable;
-//import ir.hosseinabbasi.getyourguide.data.db.model.Review;
-//import ir.hosseinabbasi.getyourguide.data.db.model.Review.dataz;
 import ir.hosseinabbasi.getyourguide.data.db.model.DaoMaster;
 import ir.hosseinabbasi.getyourguide.data.db.model.DaoSession;
 import ir.hosseinabbasi.getyourguide.data.db.model.Data;

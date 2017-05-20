@@ -18,7 +18,6 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ir.hosseinabbasi.getyourguide.R;
-//import ir.hosseinabbasi.getyourguide.data.db.model.Review;
 import ir.hosseinabbasi.getyourguide.data.db.model.Data;
 import ir.hosseinabbasi.getyourguide.data.db.model.ReviewPOJO;
 import ir.hosseinabbasi.getyourguide.ui.base.BaseActivity;
@@ -62,7 +61,6 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 
     @Override
     public void refreshQuestionnaire(List<Data> questionList) {
-        //AppLogger.d("ByMerefreshQuestionnair",questionList.toString());
         /*for (Question question : questionList) {
             if (question != null) {
                 mCardsContainerView.addView(new QuestionCard(question));
@@ -75,7 +73,6 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 
     @Override
     public void reloadQuestionnaire(List<Data> questionList) {
-        //AppLogger.d("ByMereloadQuestionnaire",questionList.toString());
         refreshQuestionnaire(questionList);
         ScaleAnimation animation =
                 new ScaleAnimation(
