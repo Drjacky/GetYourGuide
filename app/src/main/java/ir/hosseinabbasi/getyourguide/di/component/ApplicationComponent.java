@@ -12,15 +12,12 @@ import ir.hosseinabbasi.getyourguide.MvpApp;
 import ir.hosseinabbasi.getyourguide.data.DataManager;
 import ir.hosseinabbasi.getyourguide.di.ApplicationContext;
 import ir.hosseinabbasi.getyourguide.di.module.ApplicationModule;
-import ir.hosseinabbasi.getyourguide.service.SyncService;
 
 @Singleton
 @Component(modules = ApplicationModule.class)
 public interface ApplicationComponent {
 
     void inject(MvpApp app);
-
-    void inject(SyncService service);
 
     @ApplicationContext
     Context context();

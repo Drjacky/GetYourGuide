@@ -13,8 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <service android:name=".service.SyncService" />
-
         <activity
             android:name="ir.hosseinabbasi.getyourguide.ui.splash.SplashActivity"
             android:launchMode="singleTop"

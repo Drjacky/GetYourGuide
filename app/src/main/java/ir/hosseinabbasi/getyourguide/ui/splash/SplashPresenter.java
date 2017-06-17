@@ -32,7 +32,7 @@ public class SplashPresenter<V extends SplashMvpView> extends BasePresenter<V>
     public void onAttach(V mvpView) {
         super.onAttach(mvpView);
 
-        getMvpView().startSyncService();
+        //getMvpView().startSyncService();
 
         getCompositeDisposable().add(getDataManager()
                 .seedDatabaseQuestions()
