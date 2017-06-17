@@ -8,5 +8,5 @@ import io.reactivex.Observable;
 import ir.hosseinabbasi.getyourguide.data.db.DbHelper;
 
 public interface DataManager extends DbHelper {
-    Observable<Boolean> seedDatabaseQuestions();
+    Observable<Boolean> seedDatabaseReviews();
 }

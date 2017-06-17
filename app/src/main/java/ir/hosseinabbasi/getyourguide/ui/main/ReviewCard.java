@@ -17,20 +17,20 @@ import com.mindorks.placeholderview.annotations.View;
 
 @NonReusable
 @Layout(R.layout.card_layout)
-public class QuestionCard {
-    private static final String TAG = "QuestionCard";
+public class ReviewCard {
+    private static final String TAG = "ReviewCard";
 
-    @View(R.id.tv_question_txt)
-    private TextView mQuestionTextView;
+    @View(R.id.tv_review_txt)
+    private TextView mReviewTextView;
 
-    private Data mQuestion;
+    private Data mReview;
 
-    public QuestionCard(Data question) {
-        mQuestion = question;
+    public ReviewCard(Data review) {
+        mReview = review;
     }
 
     @Resolve
     private void onResolved() {
-        mQuestionTextView.setText(mQuestion.getRating());
+        mReviewTextView.setText(mReview.getRating());
     }
 }

@@ -11,6 +11,6 @@ import ir.hosseinabbasi.getyourguide.ui.base.MvpView;
  */
 
 public interface MainMvpView extends MvpView {
-    void refreshQuestionnaire(List<Data> questionList);
-    void reloadQuestionnaire(List<Data> questionList);
+    void refreshReviewList(List<Data> reviewList);
+    void reloadReviewList(List<Data> reviewList);
 }

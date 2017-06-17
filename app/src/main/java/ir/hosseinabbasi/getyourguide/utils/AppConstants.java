@@ -15,7 +15,7 @@ public final class AppConstants {
 
     public static final long NULL_INDEX = -1L;
 
-    public static final String SEED_DATABASE_QUESTIONS = "reviews.json";
+    public static final String SEED_DATABASE_REVIEWS = "reviews.json";
 
     public static final String TIMESTAMP_FORMAT = "yyyyMMdd_HHmmss";
 

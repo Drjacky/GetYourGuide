@@ -35,7 +35,7 @@ public class SplashPresenter<V extends SplashMvpView> extends BasePresenter<V>
         //getMvpView().startSyncService();
 
         getCompositeDisposable().add(getDataManager()
-                .seedDatabaseQuestions()
+                .seedDatabaseReviews()
                 .subscribeOn(getSchedulerProvider().io())
                 .observeOn(getSchedulerProvider().ui())
                 .subscribe(new Consumer<Boolean>() {

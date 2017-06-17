@@ -11,8 +11,8 @@ import ir.hosseinabbasi.getyourguide.data.db.model.ReviewPOJO;
  */
 
 public interface DbHelper {
-    Observable<List<Data>> getAllQuestions();
-    Observable<Boolean> isQuestionEmpty();
-    Observable<Boolean> saveQuestion(Data question);
-    Observable<Boolean> saveQuestionList(List<Data> questionList);
+    Observable<List<Data>> getAllReviews();
+    Observable<Boolean> isReviewEmpty();
+    Observable<Boolean> saveReview(Data review);
+    Observable<Boolean> saveReviewList(List<Data> reviewList);
 }

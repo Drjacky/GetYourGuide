@@ -61,7 +61,7 @@
                     android:paddingTop="3dp">
 
                     <TextView
-                        android:id="@+id/tv_question_txt"
+                        android:id="@+id/tv_review_txt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"

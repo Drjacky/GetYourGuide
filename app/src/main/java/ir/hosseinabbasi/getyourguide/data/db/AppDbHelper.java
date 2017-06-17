@@ -28,7 +28,7 @@ public class AppDbHelper implements DbHelper {
     }
 
     @Override
-    public Observable<List<Data>> getAllQuestions() {
+    public Observable<List<Data>> getAllReviews() {
         return Observable.fromCallable(new Callable<List<Data>>() {
             @Override
             public List<Data> call() throws Exception {
@@ -38,7 +38,7 @@ public class AppDbHelper implements DbHelper {
     }
 
     @Override
-    public Observable<Boolean> isQuestionEmpty() {
+    public Observable<Boolean> isReviewEmpty() {
         return Observable.fromCallable(new Callable<Boolean>() {
             @Override
             public Boolean call() throws Exception {
@@ -48,22 +48,22 @@ public class AppDbHelper implements DbHelper {
     }
 
     @Override
-    public Observable<Boolean> saveQuestion(final Data question) {
+    public Observable<Boolean> saveReview(final Data review) {
         return Observable.fromCallable(new Callable<Boolean>() {
             @Override
             public Boolean call() throws Exception {
-                mDaoSession.getDataDao().insert(question);
+                mDaoSession.getDataDao().insert(review);
                 return true;
             }
         });
     }
 
     @Override
-    public Observable<Boolean> saveQuestionList(final List<Data> questionList) {
+    public Observable<Boolean> saveReviewList(final List<Data> reviewList) {
         return Observable.fromCallable(new Callable<Boolean>() {
             @Override
             public Boolean call() throws Exception {
-                mDaoSession.getDataDao().insertInTx(questionList);
+                mDaoSession.getDataDao().insertInTx(reviewList);
                 return true;
             }
         });

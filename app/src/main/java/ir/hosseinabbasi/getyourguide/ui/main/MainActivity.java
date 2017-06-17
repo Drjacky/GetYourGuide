@@ -61,20 +61,20 @@ public class MainActivity extends BaseActivity implements MainMvpView {
     }
 
     @Override
-    public void refreshQuestionnaire(List<Data> questionList) {
-        /*for (Question question : questionList) {
-            if (question != null) {
-                mCardsContainerView.addView(new QuestionCard(question));
+    public void refreshReviewList(List<Data> reviewList) {
+        /*for (Data data : reviewList) {
+            if (data != null) {
+                mCardsContainerView.addView(new ReviewCard(data));
             }
         }*/
 
-        //ArrayAdapter<Question> adapter = new ArrayAdapter<Question>(this,android.R.layout.simple_list_item_1,questionList);
-        mReviewsContainerView.setAdapter(new CustomArrayAdapter(MainActivity.this,questionList));
+        //ArrayAdapter<Data> adapter = new ArrayAdapter<Data>(this,android.R.layout.simple_list_item_1,reviewList);
+        mReviewsContainerView.setAdapter(new CustomArrayAdapter(MainActivity.this,reviewList));
     }
 
     @Override
-    public void reloadQuestionnaire(List<Data> questionList) {
-        refreshQuestionnaire(questionList);
+    public void reloadReviewList(List<Data> reviewList) {
+        refreshReviewList(reviewList);
         ScaleAnimation animation =
                 new ScaleAnimation(
                         1.15f, 1, 1.15f, 1,

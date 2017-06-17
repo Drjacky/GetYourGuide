@@ -36,17 +36,17 @@ public class MainPresenter<V extends MainMvpView> extends BasePresenter<V>
     @Override
     public void onViewInitialized() {
         getCompositeDisposable().add(getDataManager()
-                .getAllQuestions()
+                .getAllReviews()
                 .subscribeOn(getSchedulerProvider().io())
                 .observeOn(getSchedulerProvider().ui())
                 .subscribe(new Consumer<List<Data>>() {
                     @Override
-                    public void accept(List<Data> questionList) throws Exception {
+                    public void accept(List<Data> reviewList) throws Exception {
                         if (!isViewAttached()) {
                             return;
                         }
-                        if (questionList != null) {
-                            getMvpView().refreshQuestionnaire(questionList);
+                        if (reviewList != null) {
+                            getMvpView().refreshReviewList(reviewList);
                         }
                     }
                 }));
@@ -55,18 +55,18 @@ public class MainPresenter<V extends MainMvpView> extends BasePresenter<V>
     @Override
     public void onCardExhausted() {
         getCompositeDisposable().add(getDataManager()
-                .getAllQuestions()
+                .getAllReviews()
                 .subscribeOn(getSchedulerProvider().io())
                 .observeOn(getSchedulerProvider().ui())
                 .subscribe(new Consumer<List<Data>>() {
                     @Override
-                    public void accept(List<Data> questionList) throws Exception {
+                    public void accept(List<Data> reviewList) throws Exception {
                         if (!isViewAttached()) {
                             return;
                         }
 
-                        if (questionList != null) {
-                            getMvpView().reloadQuestionnaire(questionList);
+                        if (reviewList != null) {
+                            getMvpView().reloadReviewList(reviewList);
                         }
                     }
                 }));

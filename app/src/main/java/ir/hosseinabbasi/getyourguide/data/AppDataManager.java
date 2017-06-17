@@ -49,34 +49,34 @@ public class AppDataManager implements DataManager {
     }
 
     @Override
-    public Observable<Boolean> isQuestionEmpty() {
-        return mDbHelper.isQuestionEmpty();
+    public Observable<Boolean> isReviewEmpty() {
+        return mDbHelper.isReviewEmpty();
     }
 
     @Override
-    public Observable<Boolean> saveQuestion(Data question) {
-        return mDbHelper.saveQuestion(question);
+    public Observable<Boolean> saveReview(Data review) {
+        return mDbHelper.saveReview(review);
     }
 
     @Override
-    public Observable<Boolean> saveQuestionList(List<Data> questionList) {
-        return mDbHelper.saveQuestionList(questionList);
+    public Observable<Boolean> saveReviewList(List<Data> reviewList) {
+        return mDbHelper.saveReviewList(reviewList);
     }
 
     @Override
-    public Observable<List<Data>> getAllQuestions() {
-        return mDbHelper.getAllQuestions();
+    public Observable<List<Data>> getAllReviews() {
+        return mDbHelper.getAllReviews();
     }
 
     @Override
-    public Observable<Boolean> seedDatabaseQuestions() {
+    public Observable<Boolean> seedDatabaseReviews() {
 
 
         //GsonBuilder builder = new GsonBuilder().excludeFieldsWithoutExposeAnnotation();
         //GsonBuilder builder = new GsonBuilder();
         //final Gson gson = builder.create();
 
-        return mDbHelper.isQuestionEmpty()
+        return mDbHelper.isReviewEmpty()
                 .concatMap(new Function<Boolean, ObservableSource<? extends Boolean>>() {
                     @Override
                     public ObservableSource<? extends Boolean> apply(Boolean isEmpty)
@@ -85,29 +85,29 @@ public class AppDataManager implements DataManager {
                             Type type = $Gson$Types
                                     .newParameterizedTypeWithOwner(null, List.class,
                                             ReviewPOJO.class);
-                            /*List<Review> questionList = gson.fromJson(
+                            /*List<Review> reviewList = gson.fromJson(
                                     CommonUtils.loadJSONFromAsset(mContext,
-                                            AppConstants.SEED_DATABASE_QUESTIONS),
+                                            AppConstants.SEED_DATABASE_REVIEWS),
                                     type);*/
-                            //List<ReviewPOJO> questionList = new ArrayList<ReviewPOJO>();
+                            //List<ReviewPOJO> reviewList = new ArrayList<ReviewPOJO>();
                             /*ReviewPOJO rv = gson.fromJson(
                                     CommonUtils.loadJSONFromAsset(mContext,
-                                            AppConstants.SEED_DATABASE_QUESTIONS),
+                                            AppConstants.SEED_DATABASE_REVIEWS),
                                     type);*/
 
                             /*List<ReviewPOJO.Data> rv = gson.fromJson(
                                     CommonUtils.loadJSONFromAsset(mContext,
-                                            AppConstants.SEED_DATABASE_QUESTIONS),
+                                            AppConstants.SEED_DATABASE_REVIEWS),
                                     type);*/
 
                             /*List<Data> rv = gson.fromJson(
                                     CommonUtils.loadJSONFromAsset(mContext,
-                                            AppConstants.SEED_DATABASE_QUESTIONS),
+                                            AppConstants.SEED_DATABASE_REVIEWS),
                                     type);*/
 
                             JsonParser parser = new JsonParser();
                             JsonObject rootObject = parser.parse(CommonUtils.loadJSONFromAsset(mContext,
-                                    AppConstants.SEED_DATABASE_QUESTIONS)).getAsJsonObject();
+                                    AppConstants.SEED_DATABASE_REVIEWS)).getAsJsonObject();
                             JsonElement dataElement = rootObject.get("data");
 
                             Gson gson = new Gson();
@@ -126,16 +126,16 @@ public class AppDataManager implements DataManager {
 
 
                             /*ReviewPOJO allData = new Gson().fromJson(CommonUtils.loadJSONFromAsset(mContext,
-                                    AppConstants.SEED_DATABASE_QUESTIONS),type);
+                                    AppConstants.SEED_DATABASE_REVIEWS),type);
                             List<Data> rvd = allData.getData();*/
 
                             /*for (ReviewPOJO.DataType data : rv.getData()) {
-                                questionList.add(data);
+                                reviewList.add(data);
                             }*/
 
-                            return saveQuestionList(dataList);
-                            //return saveQuestionList(questionList);
-                            //return saveQuestionList(questionList);
+                            return saveReviewList(dataList);
+                            //return saveReviewList(reviewList);
+                            //return saveReviewList(reviewList);
                         }
                         return Observable.just(false);
                     }
