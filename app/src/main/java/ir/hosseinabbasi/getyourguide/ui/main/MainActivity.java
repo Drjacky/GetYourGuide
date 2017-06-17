@@ -25,6 +25,7 @@ import ir.hosseinabbasi.getyourguide.utils.AppLogger;
 
 /**
  * Created by Dr.jacky on 2017/05/19.
+ *
  */
 public class MainActivity extends BaseActivity implements MainMvpView {
 
@@ -110,36 +111,4 @@ public class MainActivity extends BaseActivity implements MainMvpView {
         //setupCardContainerView();
         mPresenter.onViewInitialized();
     }
-
-    /*private void setupCardContainerView() {
-
-        int screenWidth = ScreenUtils.getScreenWidth(this);
-        int screenHeight = ScreenUtils.getScreenHeight(this);
-
-        mCardsContainerView.getBuilder()
-                .setDisplayViewCount(3)
-                .setHeightSwipeDistFactor(10)
-                .setWidthSwipeDistFactor(5)
-                .setSwipeDecor(new SwipeDecor()
-                        .setViewWidth((int) (0.90 * screenWidth))
-                        .setViewHeight((int) (0.75 * screenHeight))
-                        .setPaddingTop(20)
-                        .setSwipeRotationAngle(10)
-                        .setRelativeScale(0.01f));
-
-        mCardsContainerView.addItemRemoveListener(new ItemRemovedListener() {
-            @Override
-            public void onItemRemoved(int count) {
-                if (count == 0) {
-                    // reload the contents again after 1 sec delay
-                    new Handler(getMainLooper()).postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            mPresenter.onCardExhausted();
-                        }
-                    }, 800);
-                }
-            }
-        });
-    }*/
 }
