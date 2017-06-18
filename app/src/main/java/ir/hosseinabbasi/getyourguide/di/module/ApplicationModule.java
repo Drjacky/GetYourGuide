@@ -20,6 +20,7 @@ import ir.hosseinabbasi.getyourguide.utils.AppConstants;
 
 /**
  * Created by Dr.jacky on 2017/05/19.
+ *
  */
 
 @Module
@@ -32,7 +33,7 @@ public class ApplicationModule {
     }
 
     @Provides
-    @ApplicationContext
+    @ApplicationContext /*Or @Named("application_context")*/ /* $$$ */
     Context provideContext() {
         return mApplication;
     }

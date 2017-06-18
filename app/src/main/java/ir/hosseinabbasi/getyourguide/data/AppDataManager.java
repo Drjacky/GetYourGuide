@@ -45,6 +45,7 @@ public class AppDataManager implements DataManager {
     @Inject /*@Inject on the constructor instructs the Dagger to accumulate all the parameter dependencies when the class is being constructed.
     @ApplicationContext Qualifier facilitates AppDataManager to get the context object of the application from dagger’s dependency graph.
     */
+    /*Or @Named("application_context")*/ /* $$$ */
     public AppDataManager(@ApplicationContext Context context,
                           DbHelper dbHelper) {
         mContext = context;

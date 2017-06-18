@@ -26,6 +26,7 @@ import ir.hosseinabbasi.getyourguide.utils.NetworkUtils;
 
 /**
  * Created by Dr.jacky on 2017/05/19.
+ *
  */
 public abstract class BaseActivity extends AppCompatActivity
         implements MvpView, BaseFragment.Callback {
@@ -41,6 +42,7 @@ public abstract class BaseActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         /*We also provide ApplicationComponent that is required for dependencies resolution mentioned in ActivityModule.*/
         mActivityComponent = DaggerActivityComponent.builder()
+                /*Modules that are part of THIS component, need to be created HERE too*/ /* $$ */
                 .activityModule(new ActivityModule(this))
                 .applicationComponent(((MvpApp) getApplication()).getComponent())
                 .build();

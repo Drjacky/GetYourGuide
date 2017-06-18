@@ -17,6 +17,7 @@ import ir.hosseinabbasi.getyourguide.utils.AppLogger;
 
 /**
  * Created by Dr.jacky on 2017/05/19.
+ *
  */
 
 public class MvpApp extends Application {
@@ -33,6 +34,7 @@ public class MvpApp extends Application {
 
         /*DaggerApplicationComponent is the generated class by the Dagger, implementing the ApplicationComponent. We provide the ApplicationModule class that is used to construct the dependencies.*/
         mApplicationComponent = DaggerApplicationComponent.builder()
+                /*List of modules that are part of ApplicationComponent, need to be created HERE too*/ /* $ */
                 .applicationModule(new ApplicationModule(this)).build();
 
         /*We have also called the inject method of applicationComponent and passed the instance of the MvpApp class. This is done to use it for providing the DataManager.*/

@@ -11,6 +11,6 @@ import javax.inject.Qualifier;
  */
 
 @Qualifier
-@Retention(RetentionPolicy.RUNTIME)
+@Retention(RetentionPolicy.RUNTIME) /*Dagger 2 does not rely on the annotation at runtime, keeping the RetentionPolicy at RUNTIME is useful in allowing you to inspect your modules later.*/
 public @interface ApplicationContext {
 }
