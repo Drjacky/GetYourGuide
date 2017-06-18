@@ -7,6 +7,7 @@ import javax.inject.Qualifier;
 
 /**
  * Created by Dr.jacky on 2017/05/19.
+ *
  */
 
 @Qualifier

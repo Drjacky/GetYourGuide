@@ -21,7 +21,7 @@ import ir.hosseinabbasi.getyourguide.utils.rx.SchedulerProvider;
  * Created by Dr.jacky on 2017/05/19.
  */
 
-@Module
+@Module /*To provide the dependency for a class we have to create a Module class. This class defines the methods that provide the dependency.*/
 public class ActivityModule {
 
     private Activity mActivity;
@@ -30,7 +30,7 @@ public class ActivityModule {
         this.mActivity = activity;
     }
 
-    @Provides
+    @Provides /*The dependency provider method*/
     @ActivityContext
     Context provideContext() {
         return mActivity;

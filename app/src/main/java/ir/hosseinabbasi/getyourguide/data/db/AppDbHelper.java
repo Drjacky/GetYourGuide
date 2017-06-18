@@ -15,9 +15,10 @@ import ir.hosseinabbasi.getyourguide.data.db.model.ReviewPOJO;
 
 /**
  * Created by Dr.jacky on 2017/05/19.
+ * AppDbHelper class will be used by DataManager to access the SQLite database.
  */
 
-@Singleton
+@Singleton /*@Singleton ensure a single instance of a class globally.*/
 public class AppDbHelper implements DbHelper {
 
     private final DaoSession mDaoSession;

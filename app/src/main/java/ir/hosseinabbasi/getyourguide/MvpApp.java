@@ -21,6 +21,7 @@ import ir.hosseinabbasi.getyourguide.utils.AppLogger;
 
 public class MvpApp extends Application {
 
+    /*This class gets DataManager through DI*/
     @Inject
     DataManager mDataManager;
 
@@ -30,9 +31,11 @@ public class MvpApp extends Application {
     public void onCreate() {
         super.onCreate();
 
+        /*DaggerApplicationComponent is the generated class by the Dagger, implementing the ApplicationComponent. We provide the ApplicationModule class that is used to construct the dependencies.*/
         mApplicationComponent = DaggerApplicationComponent.builder()
                 .applicationModule(new ApplicationModule(this)).build();
 
+        /*We have also called the inject method of applicationComponent and passed the instance of the MvpApp class. This is done to use it for providing the DataManager.*/
         mApplicationComponent.inject(this);
 
         AppLogger.init();
@@ -44,6 +47,7 @@ public class MvpApp extends Application {
 
     }
 
+    /*ApplicationComponent instance is retained so as to access all the classes that are available in the dependency graph and is express for access.*/
     public ApplicationComponent getComponent() {
         return mApplicationComponent;
     }

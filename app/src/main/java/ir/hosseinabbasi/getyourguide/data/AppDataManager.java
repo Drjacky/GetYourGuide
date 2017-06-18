@@ -31,6 +31,7 @@ import ir.hosseinabbasi.getyourguide.utils.CommonUtils;
 
 /**
  * Created by Dr.jacky on 2017/05/19.
+ * AppDataManager class will provide access to the data of the application.
  */
 
 @Singleton
@@ -41,7 +42,9 @@ public class AppDataManager implements DataManager {
     private final Context mContext;
     private final DbHelper mDbHelper;
 
-    @Inject
+    @Inject /*@Inject on the constructor instructs the Dagger to accumulate all the parameter dependencies when the class is being constructed.
+    @ApplicationContext Qualifier facilitates AppDataManager to get the context object of the application from dagger’s dependency graph.
+    */
     public AppDataManager(@ApplicationContext Context context,
                           DbHelper dbHelper) {
         mContext = context;

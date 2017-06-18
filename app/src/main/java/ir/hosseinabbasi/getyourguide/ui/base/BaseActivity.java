@@ -39,6 +39,7 @@ public abstract class BaseActivity extends AppCompatActivity
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        /*We also provide ApplicationComponent that is required for dependencies resolution mentioned in ActivityModule.*/
         mActivityComponent = DaggerActivityComponent.builder()
                 .activityModule(new ActivityModule(this))
                 .applicationComponent(((MvpApp) getApplication()).getComponent())

@@ -16,6 +16,7 @@ import org.greenrobot.greendao.DaoException;
 
 /**
  * Created by Dr.jacky on 2017/05/20.
+ * Model classes for retrieving the DB table.
  */
 
 //@Entity(nameInDb = "reviews")

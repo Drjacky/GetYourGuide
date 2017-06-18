@@ -49,15 +49,15 @@ public class ApplicationModule {
     }
 
     @Provides
-    @ApiInfo
-    String provideApiKey() {
-        return BuildConfig.API_KEY;
+    @DatabaseInfo
+    Integer provideDatabaseVersion() {
+        return AppConstants.DB_VERSION;
     }
 
     @Provides
-    @PreferenceInfo
-    String providePreferenceName() {
-        return AppConstants.PREF_NAME;
+    @ApiInfo
+    String provideApiKey() {
+        return BuildConfig.API_KEY;
     }
 
     @Provides

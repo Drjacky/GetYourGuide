@@ -19,7 +19,7 @@ import ir.hosseinabbasi.getyourguide.utils.AppLogger;
 @Singleton
 public class DbOpenHelper extends DaoMaster.OpenHelper {
 
-    @Inject
+    @Inject /*@DatabaseInfo qualifier helps the dagger to distinguish between String and Integer Dependencies from existing same types in the dependency graph.*/
     public DbOpenHelper(@ApplicationContext Context context, @DatabaseInfo String name) {
         super(context, name);
     }
