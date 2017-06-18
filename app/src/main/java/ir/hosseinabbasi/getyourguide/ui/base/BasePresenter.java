@@ -3,22 +3,12 @@ package ir.hosseinabbasi.getyourguide.ui.base;
 /**
  * Created by Dr.jacky on 2017/05/19.
  */
-import android.util.Log;
-
-import com.androidnetworking.common.ANConstants;
-import com.androidnetworking.error.ANError;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonSyntaxException;
-
-import ir.hosseinabbasi.getyourguide.data.DataManager;
-import ir.hosseinabbasi.getyourguide.utils.AppConstants;
-import ir.hosseinabbasi.getyourguide.utils.rx.SchedulerProvider;
 
 import javax.inject.Inject;
-import javax.net.ssl.HttpsURLConnection;
 
 import io.reactivex.disposables.CompositeDisposable;
+import ir.hosseinabbasi.getyourguide.data.DataManager;
+import ir.hosseinabbasi.getyourguide.utils.rx.SchedulerProvider;
 
 /**
  * Base class that implements the Presenter interface and provides a base implementation for

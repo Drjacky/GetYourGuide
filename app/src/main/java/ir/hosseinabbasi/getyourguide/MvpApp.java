@@ -7,7 +7,6 @@ import com.androidnetworking.interceptors.HttpLoggingInterceptor;
 
 import javax.inject.Inject;
 
-import ir.hosseinabbasi.getyourguide.BuildConfig;
 import ir.hosseinabbasi.getyourguide.data.DataManager;
 import ir.hosseinabbasi.getyourguide.di.component.ApplicationComponent;
 import ir.hosseinabbasi.getyourguide.di.component.DaggerApplicationComponent;

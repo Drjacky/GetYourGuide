@@ -1,17 +1,12 @@
 package ir.hosseinabbasi.getyourguide.ui.splash;
 
-import android.util.Log;
-
 import javax.inject.Inject;
 
-import io.reactivex.ObservableSource;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.functions.Consumer;
-import io.reactivex.functions.Function;
 import ir.hosseinabbasi.getyourguide.R;
 import ir.hosseinabbasi.getyourguide.data.DataManager;
 import ir.hosseinabbasi.getyourguide.ui.base.BasePresenter;
-import ir.hosseinabbasi.getyourguide.utils.AppLogger;
 import ir.hosseinabbasi.getyourguide.utils.rx.SchedulerProvider;
 
 /**

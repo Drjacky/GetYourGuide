@@ -16,13 +16,11 @@ android {
     buildTypes {
         debug {
             buildConfigField("String", "BASE_URL", "\"https://www.getyourguide.com/berlin-l17/tempelhof-2-hour-airport-history-tour-berlin-airlift-more-t23776/\"")
-            buildConfigField("String", "API_KEY", "\"ABCXYZ123TEST\"")
         }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             buildConfigField("String", "BASE_URL", "\"https://www.getyourguide.com/berlin-l17/tempelhof-2-hour-airport-history-tour-berlin-airlift-more-t23776/\"")
-            buildConfigField("String", "API_KEY", "\"ABCXYZ123TEST\"")
         }
     }
 

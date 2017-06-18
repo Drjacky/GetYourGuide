@@ -1,20 +1,15 @@
 package ir.hosseinabbasi.getyourguide.ui.main;
 
-import android.util.Log;
-
-import ir.hosseinabbasi.getyourguide.data.DataManager;
-import ir.hosseinabbasi.getyourguide.data.db.model.Data;
-import ir.hosseinabbasi.getyourguide.data.db.model.ReviewPOJO;
-import ir.hosseinabbasi.getyourguide.ui.base.BasePresenter;
-import ir.hosseinabbasi.getyourguide.utils.AppLogger;
-import ir.hosseinabbasi.getyourguide.utils.rx.SchedulerProvider;
-
 import java.util.List;
 
 import javax.inject.Inject;
 
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.functions.Consumer;
+import ir.hosseinabbasi.getyourguide.data.DataManager;
+import ir.hosseinabbasi.getyourguide.data.db.model.Data;
+import ir.hosseinabbasi.getyourguide.ui.base.BasePresenter;
+import ir.hosseinabbasi.getyourguide.utils.rx.SchedulerProvider;
 
 
 /**

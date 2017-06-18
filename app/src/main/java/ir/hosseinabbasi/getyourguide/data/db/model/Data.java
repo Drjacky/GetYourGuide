@@ -4,10 +4,10 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import org.greenrobot.greendao.annotation.Entity;
+import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.annotation.Id;
 import org.greenrobot.greendao.annotation.Index;
 import org.greenrobot.greendao.annotation.Property;
-import org.greenrobot.greendao.annotation.Generated;
 
 /**
  * Created by Dr.jacky on 2017/05/20.

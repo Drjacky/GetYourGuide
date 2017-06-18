@@ -2,14 +2,13 @@ package ir.hosseinabbasi.getyourguide.ui.main;
 
 import android.widget.TextView;
 
-import ir.hosseinabbasi.getyourguide.R;
-import ir.hosseinabbasi.getyourguide.data.db.model.Data;
-import ir.hosseinabbasi.getyourguide.data.db.model.ReviewPOJO;
-
 import com.mindorks.placeholderview.annotations.Layout;
 import com.mindorks.placeholderview.annotations.NonReusable;
 import com.mindorks.placeholderview.annotations.Resolve;
 import com.mindorks.placeholderview.annotations.View;
+
+import ir.hosseinabbasi.getyourguide.R;
+import ir.hosseinabbasi.getyourguide.data.db.model.Data;
 
 /**
  * Created by Dr.jacky on 2017/05/19.

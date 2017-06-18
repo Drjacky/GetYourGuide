@@ -8,7 +8,9 @@ package ir.hosseinabbasi.getyourguide.di.component;
 
 import android.app.Application;
 import android.content.Context;
+
 import javax.inject.Singleton;
+
 import dagger.Component;
 import ir.hosseinabbasi.getyourguide.MvpApp;
 import ir.hosseinabbasi.getyourguide.data.DataManager;

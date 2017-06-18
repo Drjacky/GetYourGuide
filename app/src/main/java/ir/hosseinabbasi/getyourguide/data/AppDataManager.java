@@ -1,10 +1,8 @@
 package ir.hosseinabbasi.getyourguide.data;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -26,7 +24,6 @@ import ir.hosseinabbasi.getyourguide.data.db.model.Data;
 import ir.hosseinabbasi.getyourguide.data.db.model.ReviewPOJO;
 import ir.hosseinabbasi.getyourguide.di.ApplicationContext;
 import ir.hosseinabbasi.getyourguide.utils.AppConstants;
-import ir.hosseinabbasi.getyourguide.utils.AppLogger;
 import ir.hosseinabbasi.getyourguide.utils.CommonUtils;
 
 /**

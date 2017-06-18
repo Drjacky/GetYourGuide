@@ -1,18 +1,10 @@
 package ir.hosseinabbasi.getyourguide.data.db.model;
 
-import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import org.greenrobot.greendao.annotation.Entity;
-import org.greenrobot.greendao.annotation.Id;
-import org.greenrobot.greendao.annotation.JoinProperty;
 import org.greenrobot.greendao.annotation.Property;
-import org.greenrobot.greendao.annotation.ToMany;
-import org.greenrobot.greendao.annotation.Unique;
-import org.greenrobot.greendao.annotation.Generated;
 
 import java.util.List;
-import org.greenrobot.greendao.DaoException;
 
 /**
  * Created by Dr.jacky on 2017/05/20.

@@ -2,11 +2,10 @@ package ir.hosseinabbasi.getyourguide.ui.main;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
 import android.widget.ListView;
@@ -19,9 +18,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import ir.hosseinabbasi.getyourguide.R;
 import ir.hosseinabbasi.getyourguide.data.db.model.Data;
-import ir.hosseinabbasi.getyourguide.data.db.model.ReviewPOJO;
 import ir.hosseinabbasi.getyourguide.ui.base.BaseActivity;
-import ir.hosseinabbasi.getyourguide.utils.AppLogger;
 
 /**
  * Created by Dr.jacky on 2017/05/19.

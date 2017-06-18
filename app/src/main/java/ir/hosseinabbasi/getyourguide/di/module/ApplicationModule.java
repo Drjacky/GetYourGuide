@@ -12,10 +12,8 @@ import ir.hosseinabbasi.getyourguide.data.AppDataManager;
 import ir.hosseinabbasi.getyourguide.data.DataManager;
 import ir.hosseinabbasi.getyourguide.data.db.AppDbHelper;
 import ir.hosseinabbasi.getyourguide.data.db.DbHelper;
-import ir.hosseinabbasi.getyourguide.di.ApiInfo;
 import ir.hosseinabbasi.getyourguide.di.ApplicationContext;
 import ir.hosseinabbasi.getyourguide.di.DatabaseInfo;
-import ir.hosseinabbasi.getyourguide.di.PreferenceInfo;
 import ir.hosseinabbasi.getyourguide.utils.AppConstants;
 
 /**
@@ -53,12 +51,6 @@ public class ApplicationModule {
     @DatabaseInfo
     Integer provideDatabaseVersion() {
         return AppConstants.DB_VERSION;
-    }
-
-    @Provides
-    @ApiInfo
-    String provideApiKey() {
-        return BuildConfig.API_KEY;
     }
 
     @Provides

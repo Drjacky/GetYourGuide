@@ -1,7 +1,6 @@
 package ir.hosseinabbasi.getyourguide.ui.main;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +11,6 @@ import java.util.List;
 
 import ir.hosseinabbasi.getyourguide.R;
 import ir.hosseinabbasi.getyourguide.data.db.model.Data;
-import ir.hosseinabbasi.getyourguide.data.db.model.ReviewPOJO;
-import ir.hosseinabbasi.getyourguide.utils.AppLogger;
 
 /**
  * Created by Dr.jacky on 2017/05/19.

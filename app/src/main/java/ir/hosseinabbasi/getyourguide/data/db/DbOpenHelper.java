@@ -10,7 +10,6 @@ import javax.inject.Singleton;
 import ir.hosseinabbasi.getyourguide.data.db.model.DaoMaster;
 import ir.hosseinabbasi.getyourguide.di.ApplicationContext;
 import ir.hosseinabbasi.getyourguide.di.DatabaseInfo;
-import ir.hosseinabbasi.getyourguide.utils.AppLogger;
 
 /**
  * Created by Dr.jacky on 2017/05/19.

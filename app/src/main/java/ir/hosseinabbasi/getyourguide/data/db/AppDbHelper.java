@@ -10,7 +10,6 @@ import io.reactivex.Observable;
 import ir.hosseinabbasi.getyourguide.data.db.model.DaoMaster;
 import ir.hosseinabbasi.getyourguide.data.db.model.DaoSession;
 import ir.hosseinabbasi.getyourguide.data.db.model.Data;
-import ir.hosseinabbasi.getyourguide.data.db.model.ReviewPOJO;
 
 
 /**

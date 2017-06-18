@@ -4,7 +4,6 @@ import java.util.List;
 
 import io.reactivex.Observable;
 import ir.hosseinabbasi.getyourguide.data.db.model.Data;
-import ir.hosseinabbasi.getyourguide.data.db.model.ReviewPOJO;
 
 /**
  * Created by Dr.jacky on 2017/05/19.

@@ -2,7 +2,6 @@ package ir.hosseinabbasi.getyourguide.ui.splash;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import javax.inject.Inject;
@@ -11,13 +10,6 @@ import butterknife.ButterKnife;
 import ir.hosseinabbasi.getyourguide.R;
 import ir.hosseinabbasi.getyourguide.ui.base.BaseActivity;
 import ir.hosseinabbasi.getyourguide.ui.main.MainActivity;
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-
-import javax.inject.Inject;
-
-import butterknife.ButterKnife;
 
 public class SplashActivity extends BaseActivity implements SplashMvpView {
 

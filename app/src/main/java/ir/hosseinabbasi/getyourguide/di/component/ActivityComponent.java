@@ -1,9 +1,9 @@
 package ir.hosseinabbasi.getyourguide.di.component;
 
+import dagger.Component;
 import ir.hosseinabbasi.getyourguide.di.PerActivity;
 import ir.hosseinabbasi.getyourguide.di.module.ActivityModule;
 import ir.hosseinabbasi.getyourguide.ui.main.MainActivity;
-import dagger.Component;
 import ir.hosseinabbasi.getyourguide.ui.splash.SplashActivity;
 
 /**
