@@ -13,7 +13,7 @@ import ir.hosseinabbasi.getyourguide.ui.splash.SplashActivity;
  * Note that the activities, services, or fragments that can be added should be declared in this class with individual inject() methods.
  */
 
-@PerActivity /*@PerActivity is a scope and is used to tell the Dagger that the Context and Activity provided by the ActivityModule will be instantiated each time an Activity is created. So, these objects persist till that activity lives and each activity has its own set of these.*/
+@PerActivity /*@PerActivity is a scope and is used to tell the Dagger that the Context and Activity provided by the ActivityModule will be instantiated each time an Activity is created. So, these objects persist till THAT activity lives and each activity has its own set of these.*/
 /*ApplicationComponent is added to use the graph that has already been generated and do exists because the MvpApp class persists till the application is running.*/
 @Component(dependencies = ApplicationComponent.class, modules = ActivityModule.class) /* $$ */
 public interface ActivityComponent {

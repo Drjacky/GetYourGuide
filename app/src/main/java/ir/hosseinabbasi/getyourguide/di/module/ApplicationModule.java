@@ -63,5 +63,6 @@ public class ApplicationModule {
     @Singleton
     DbHelper provideDbHelper(AppDbHelper appDbHelper) {
         return appDbHelper;
+        /* return new AppDbHelper;  //if we need to make a class singleton and we provide it with   NEW   keyword, then annotate the method that provides it in the MODULE with @Singleton instead of putting it on the CLASS.*/
     }
 }

@@ -27,12 +27,12 @@ android {
     sourceSets {
         main {
             java {
-                exclude '**/ir/hosseinabbasi/getyourguide/data/db/model/Review.java'
+                //exclude '**/ir/hosseinabbasi/getyourguide/data/db/model/Review.java'
             }
         }
         androidTest {
             java {
-                exclude '**/Review.java'
+                //exclude '**/Review.java'
             }
         }
     }
@@ -90,9 +90,6 @@ dependencies {
     // code generator for view
     compile 'com.jakewharton:butterknife:8.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
-
-    // swipe view
-    compile 'com.mindorks:placeholderview:0.6.1'
 
     // logger
     compile 'com.jakewharton.timber:timber:4.5.1'
