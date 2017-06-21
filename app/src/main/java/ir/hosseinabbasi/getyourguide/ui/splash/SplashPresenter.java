@@ -11,6 +11,9 @@ import ir.hosseinabbasi.getyourguide.utils.rx.SchedulerProvider;
 
 /**
  * Created by Dr.jacky on 2017/05/19.
+ * It is the decision-making counterpart of the View and is a pure java class, with no access to Android APIs.
+ * It receives the user interactions passed on from its View and then takes the decision based on the business logic, finally instructing the View to perform specific actions.
+ * It also communicates with the DataManager for any data it needs to perform business logic.
  */
 
 public class SplashPresenter<V extends SplashMvpView> extends BasePresenter<V>

@@ -29,6 +29,7 @@ import ir.hosseinabbasi.getyourguide.utils.CommonUtils;
 /**
  * Created by Dr.jacky on 2017/05/19.
  * AppDataManager class will provide access to the data of the application.
+ * DbHelper and ApiHelper only work for DataManager.
  */
 
 @Singleton

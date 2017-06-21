@@ -93,4 +93,7 @@ dependencies {
 
     // logger
     compile 'com.jakewharton.timber:timber:4.5.1'
+
+    // swipe view
+    compile 'com.mindorks:placeholderview:0.6.1'
 }

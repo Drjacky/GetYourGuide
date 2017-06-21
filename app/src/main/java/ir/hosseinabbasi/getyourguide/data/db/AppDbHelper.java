@@ -14,6 +14,7 @@ import ir.hosseinabbasi.getyourguide.data.db.model.Data;
 
 /**
  * Created by Dr.jacky on 2017/05/19.
+ * Database management and all the data handling related to a database is done in this part of the application.
  * AppDbHelper class will be used by DataManager to access the SQLite database.
  */
 
